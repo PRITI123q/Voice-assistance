@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Docker Start</title>
+</head>
+
+<body>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSN92WPGO-dkWt7dm7hINNYNLbPCEnnnjFxg&usqp=CAU);
+            background-size: cover;
+        }
+        
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        
+        .box h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .box .inputBox {
+            position: relative;
+        }
+        
+        .box .inputBox input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: white;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            background: transparent;
+        }
+        
+        .box .inputBox label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: white;
+            pointer-events: none;
+            transition: .5s;
+        }
+        
+        .box .inputBox input:focus~label,
+        .box .inputBox input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #03a9f4;
+            font-size: 12px;
+        }
+        
+        .box input[type="submit"] {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            background: #03a9f4;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .select-box {
+            width: 300px;
+        }
+        
+        .select-box select {
+            height: 42px;
+            padding: 10px 15px;
+            line-height: 18px;
+            font-size: 16px;
+            width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        .select-box:after {
+            content: "";
+            position: absolute;
+            right: 65px;
+            top: 50%;
+            margin-top: 50px;
+            border-top: 8px solid lightblue;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            pointer-events: none;
+        }
+        
+        .select-box select:focus {
+            border: 2px solid lightblue;
+        }
+    </style>
+    <div class="box">
+        <h2>Docker Launch</h2>
+        <form action="http://192.168.42.244/cgi-bin/dockerrun1.py">
+            <div class="inputBox">
+                <input type="text" name="x" required="">
+                <label>Enter your OS Name</label><br>
+            </div>
+            <div class="inputBox">
+                <label>Enter your OS Image</label>
+            </div>
+            <br><br>
+            <div class="select-box">
+                <select name="i">
+	
+	<option> ubuntu:14.04 </option>
+	<option>centos:7</option>
+	<option>wordpress:5.1.1-php7.3-apache</option>
+	<option>java:latest</option>
+	</select>
+            </div>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
